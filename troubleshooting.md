@@ -13,7 +13,7 @@ There are two steps you can try taking.
 If you only see the missing fonts directory error, try creating a link to your system fonts directory in the Qt installation.
 For example:
 
-```
+```bash
 $ pwd
 /home/ahota/visit/trunk/third_party/qt/<qt version>/<architecture>/lib
 $ ln -s /usr/share/fonts fonts
@@ -26,7 +26,7 @@ command is based on the command found in `src/svn_bin/bv_support/bv_qt.sh`, but
 flips `--nomake examples` to `--make examples` and `--nomake tests` to `--make
 tests` (last line of the `configure` command shown below)
 
-```
+```bash
 $ pwd
 /home/ahota/packages/qt
 $ mkdir install
@@ -65,7 +65,7 @@ tell VisIt to use an external Qt installation and rebuild. You may be able to
 just delete the VisIt-installed Qt and QWT installations, but I would suggest
 rebuilding entirely. Note the `--alt-qt-dir` flag.
 
-```
+```bash
 $ pwd
 /home/ahota/visit/third_party
 $ rm -r visit
@@ -76,7 +76,7 @@ $ ../src/svn_bin/build_visit --alt-qt-dir /home/ahota/packages/qt/install --vtk 
 Once this is done, you will need to edit the resulting CMake config file.
 In the config file, add the following line after `SETUP_APP_VERSION(QT 5.10.1)`:
 
-```
+```bash
 VISIT_OPTION_DEFAULT(VISIT_QT_DIR /home/ahota/packages/qt/install/)
 ```
 
@@ -84,7 +84,7 @@ Note that anytime you re-invoke `build_visit`, you will have to make the above
 edit.  Now copy this file to `src/config-site` again, and rebuild VisIt from
 scratch.
 
-```
+```bash
 $ pwd
 /home/ahota/visit/trunk/build
 $ rm -r *
