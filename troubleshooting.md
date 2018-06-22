@@ -93,3 +93,20 @@ $ ../third_party/visit/cmake/<cmake version>/<architecture>/bin/cmake \
   ../src
 $ make -j 88
 ```
+
+## Libraries aren't found when launching VisIt
+
+I'm not sure why this happens, but it seems to be a linker error. The simplest
+(and unfortunately inconvenient) workaround is to add the missing libraries to
+your `LD_LIBRARY_PATH` environment variable. Often when this problem arises, I
+end up needing to link VTK, OSPRay, and OSMesa. I also usually set
+`LD_LIBRARY_PATH` inline when launching VisIt so I'm not permanently
+(relatively) setting my environment in the terminal.
+
+```bash
+$ pwd
+/home/ahota/visit/trunk/build/
+$ LD_LIBRARY_PATH=/home/ahota/visit/trunk/third_party/visit/vtk/<vtk version>/<architecture>/lib:/home/ahota/visit/trunk/third_party/visit/ospray/<ospray version>/<architecture>/lib:/home/ahota/visit/trunk/build/lib/osmesa/:$LD_LIBRARY_PATH ./bin/visit -o /path/to/dataset
+```
+
+Note that OSMesa is coming from your `build` directory and not from `third_party`
