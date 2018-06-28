@@ -8,6 +8,14 @@ GitHub, so expect this to change sometime soon.
 There is a `build_visit` script, which ironically is generally used to build
 third party dependencies, and not VisIt itself.
 
+- [Setup](#setup)
+- [Get VisIt source](#get-visit-source)
+- [Build third-party libraries](#build-third-party-libraries)
+- [CMake config file](#cmake-config-file)
+- [Build VisIt](#build-visit)
+- [Basic run](#basic-run)
+- [Making a binary package](#making-a-binary-package)
+
 ## Setup
 
 Create a VisIt directory somewhere, e.g. I usually have `/home/ahota/visit`
