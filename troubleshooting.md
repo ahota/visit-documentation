@@ -120,3 +120,9 @@ Vista is a database reader, and its submodule seems to expect HDF5 was built
 into VisIt.  If you use `--netcdf` when running `build_visit`, then HDF5 will
 be built for you.  Otherwise you will need to specify `--hdf5` when running
 `build_visit` to have this dependency met.
+
+## Compile errors about not finding LLVM libraries when building MesaGL
+
+Mesa depends on LLVM. This should eventually be an automatic dependency in
+`build_visit`.  For now the fix is to include `--llvm` when running
+`build_visit` to build LLVM.
