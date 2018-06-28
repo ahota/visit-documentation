@@ -109,4 +109,14 @@ $ pwd
 $ LD_LIBRARY_PATH=/home/ahota/visit/trunk/third_party/visit/vtk/<vtk version>/<architecture>/lib:/home/ahota/visit/trunk/third_party/visit/ospray/<ospray version>/<architecture>/lib:/home/ahota/visit/trunk/build/lib/osmesa/:$LD_LIBRARY_PATH ./bin/visit -o /path/to/dataset
 ```
 
-Note that OSMesa is coming from your `build` directory and not from `third_party`
+Note that OSMesa is coming from your `build` directory and not from
+`third_party`.  You can alternatively link to the OSMesa built by Mesa, but
+this doesn't have much benefit at the end of the day.  SWR will mask `libGL.so`
+either way as long as it's set as the Gallium driver.
+
+## CMake configuration error with Vista
+
+Vista is a database reader, and its submodule seems to expect HDF5 was built
+into VisIt.  If you use `--netcdf` when running `build_visit`, then HDF5 will
+be built for you.  Otherwise you will need to specify `--hdf5` when running
+`build_visit` to have this dependency met.
