@@ -2,6 +2,11 @@
 
 There's a lot of moving pieces. Things can go wrong :)
 
+- [The GUI doesn't have any text in it](#the-gui-doesnt-have-any-text-in-it)
+- [Libraries aren't found when launching VisIt](#libraries-arent-found-when-launching-visit)
+- [CMake configuration error with Vista](#cmake-configuration-error-with-vista)
+- [Compile errors about not finding LLVM libraries when building MesaGL](#compile-errors-about-not-finding-llvm-libraries-when-building-mesagl)
+
 ## The GUI doesn't have any text in it
 
 You probably also have errors in the terminal about missing fonts (e.g. "Note that Qt no longer ships fonts")
